@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def authenticate_admin!
     return if session[:admin_authenticated] == true
 
-    session[:admin_return_to] = request.fullpath if request.get?
+    session[:admin_return_to] = request.fullpath if request.get? || request.head?
     redirect_to admin_login_path, alert: "管理画面を開くにはログインしてください。"
   end
 
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_credentials
-    [ENV["ADMIN_USERNAME"].presence || local_admin_username, ENV["ADMIN_PASSWORD"].presence || local_admin_password]
+    [ ENV["ADMIN_USERNAME"].presence || local_admin_username, ENV["ADMIN_PASSWORD"].presence || local_admin_password ]
   end
 
   def local_admin_username

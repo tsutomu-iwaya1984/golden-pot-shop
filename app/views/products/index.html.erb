@@ -99,11 +99,11 @@
         </div>
         <div class="filter-field">
           <%= form.label :material, "素材" %>
-          <%= form.select :material, Product::MATERIALS, { include_blank: "すべて" }, selected: @material %>
+          <%= form.select :material, Product::MATERIALS, { include_blank: "すべて", selected: @material } %>
         </div>
         <div class="filter-field">
           <%= form.label :size, "サイズ" %>
-          <%= form.select :size, Product::SIZES, { include_blank: "すべて" }, selected: @size %>
+          <%= form.select :size, Product::SIZES, { include_blank: "すべて", selected: @size } %>
         </div>
         <div class="filter-actions">
           <%= form.submit "絞り込む", class: "button button-primary" %>
@@ -152,6 +152,6 @@
       <p class="wordmark">黄金堂</p>
       <p>GOLDEN POT SHOP — Portfolio Edition</p>
     </div>
-    <a href="https://github.com/gifted1984-del/golden-pot-shop" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    <a href="https://github.com/tsutomu-iwaya1984/golden-pot-shop" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
   </footer>
 </div>

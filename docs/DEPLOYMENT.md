@@ -4,7 +4,7 @@
 
 - Rails application running in Docker on Render.
 - SQLite data persisted on a Render disk mounted at `/rails/storage`.
-- Basic authentication for `/admin/*` using `ADMIN_USERNAME` and `ADMIN_PASSWORD`.
+- Session-based administrator login for `/admin/*` using `ADMIN_USERNAME` and `ADMIN_PASSWORD`.
 - A checkout **demonstration only**. No payment gateway is configured, no purchase is created, and payment data is not stored.
 
 ## Before pushing

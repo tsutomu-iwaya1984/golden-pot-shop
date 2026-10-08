@@ -10,12 +10,9 @@ module ActiveSupport
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
 
-    def admin_auth_headers
-      {
-        "HTTP_AUTHORIZATION" => ActionController::HttpAuthentication::Basic.encode_credentials(
-          "admin", "golden-pot-local"
-        )
-      }
+    def sign_in_admin
+      post admin_login_url, params: { username: "admin", password: "golden-pot-local" }
+      assert_redirected_to admin_dashboard_url
     end
 
     # Add more helper methods to be used by all tests here...

@@ -1,6 +1,7 @@
 # 黄金堂 - Golden Pot Store — Version 2.0.0
 
-> **現在の公開バージョン：V2.0.0**  
+> **現在の公開バージョン：V2.0.0**
+> 個人の経験紹介は[ポートフォリオホームページ](https://tsutomu-iwaya1984.github.io/)をご覧ください。
 > 体験型ストアフロント・管理者Console V2・購入デモを含む最新版です。  
 > 公開サイト：<https://golden-pot-shop-v2.onrender.com>  
 > 管理者Console V2：<https://golden-pot-shop-v2.onrender.com/admin/dashboard>
@@ -24,8 +25,8 @@ Ruby on Railsで制作した、壺を販売する架空のECサイト風ポー�
 
 | バージョン | ブランチ | ホームページ | 管理アプリ | 状態 |
 | --- | --- | --- | --- | --- |
-| **V2.0.0（現在）** | [`v2/experience`](https://github.com/gifted1984-del/golden-pot-shop/tree/v2/experience) | [公開サイト](https://golden-pot-shop-v2.onrender.com) | [管理者Console V2](https://golden-pot-shop-v2.onrender.com/admin/dashboard) | 公開中 |
-| **V1（初期版）** | [`main`](https://github.com/gifted1984-del/golden-pot-shop/tree/main) | [初期版ホームページ](https://golden-pot-shop-1.onrender.com) | [初期版管理アプリ](https://golden-pot-shop-1.onrender.com/admin/dashboard/index) | 比較用に公開を維持 |
+| **V2.0.0（現在）** | [`v2/experience`](https://github.com/tsutomu-iwaya1984/golden-pot-shop/tree/v2/experience) | [公開サイト](https://golden-pot-shop-v2.onrender.com) | [管理者Console V2](https://golden-pot-shop-v2.onrender.com/admin/dashboard) | 公開中 |
+| **V1（初期版）** | [`main`](https://github.com/tsutomu-iwaya1984/golden-pot-shop/tree/main) | [初期版ホームページ](https://golden-pot-shop-1.onrender.com) | [初期版管理アプリ](https://golden-pot-shop-1.onrender.com/admin/dashboard/index) | 比較用に公開を維持 |
 
 V2.0.0には、素材を巡るストーリー型ホームページ、カタログ絞り込み、管理者用Console V2、購入体験を示す決済デモを含みます。
 
@@ -81,3 +82,16 @@ GitHubへのコード管理、Renderへのデプロイまで、一連のWebア�
 決済デモではテスト番号 `4242 4242 4242 4242` だけを利用します。実在するカード情報は入力しないでください。
 
 デプロイ手順は[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)を確認してください。
+
+## AIの利用と動作確認
+
+プログラミングは趣味の範囲で学習しており、AIの支援を使って制作・改善しています。
+V1とV2の実装差分は公開ソースで確認できます。
+
+認証はHTTP Basicではなく、ログインフォームによるセッション認証です。
+未認証の管理画面へのアクセスはログイン画面へ転送されます。
+テストではログイン／ログアウト、変更操作の認証、検索語・素材・サイズの条件保持を確認しています。
+GitHub Actionsはmainとv2/experienceの両方で実行します。
+
+`render.yaml` はStarterプランと永続ディスクを使う構成例です。実際の契約はRender側の設定によって異なります。
+休止中のサービスは初回表示に起動待ちが発生することがあります。

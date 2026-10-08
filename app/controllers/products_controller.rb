@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: %i[index show]
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
   def index
-  @products = Product.all
+    @products = Product.all
 
-  @visit = Visit.first_or_create!(count: 0)
-  @visit.increment!(:count)
-end
+    @visit = Visit.first_or_create!(count: 0)
+    @visit.increment!(:count)
+  end
 
   # GET /products/1 or /products/1.json
   def show
